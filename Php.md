@@ -37,13 +37,12 @@ class Foo extends Bar implements FooInterface
     }
 ```
  2.  **Geral**
-	3. Arquivos
-		4. Em todos os arquivos **DEVEM** possui uma linha em vazia.
-		5. O fechamento `?>` **DEVE** ser omitidos de arquivos que possuem somente PHP.
-	4. Linhas
-		5. **PODEM** ser adicionadas linhas em branco para que com o objetivo de melhorar a legibilidade e para indicar bloco de códigos relacionados.
-		6. **NÃO DEVE** haver mais de uma declaração por linha.
- 3.  **Modelos**
- 4. **Controladores**
- 5. 
+	 - Arquivos
+		- Em todos os arquivos **DEVEM** possui uma linha em vazia.
+		- O fechamento `?>` **DEVE** ser omitido de arquivos que possuem somente PHP.
+		- **PODEM** ser adicionadas linhas em branco para que com o objetivo de melhorar a legibilidade e para indicar bloco de códigos relacionados.
+		- **NÃO DEVE** haver mais de uma declaração por linha.
+ 4.  **Modelos**
+ 5. **Controladores**
+ 6. 
 
