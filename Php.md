@@ -11,30 +11,30 @@ Este é o guia de desenvolvimento para classes de **PHP** do **SBS**.
 	 6. A chave de abertura de estruturas **DEVEM** permanecer na mesma linha, e seu fechamento em uma nova linha.
 	 7. Os parênteses das estruturas de controle **NÂO DEVEM** possui um espaço depois dos mesmos.
 ```
-	<?php
-	namespace Vendor\Package;
+<?php
+namespace Vendor\Package;
 
-	use FooInterface;
-	use BarClass as Bar;
-	use OtherVendor\OtherPackage\BazClass;
+use FooInterface;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
 
-	class Foo extends Bar implements FooInterface
-	{
-	    public function sampleMethod($a, $b = null)
-	    {
-	        if ($a === $b) {
-	            bar();
-	        } elseif ($a > $b) {
-	            $foo->bar($arg1);
-	        } else {
-	            BazClass::bar($arg2, $arg3);
-	        }
-	    }
+class Foo extends Bar implements FooInterface
+{
+    public function sampleMethod($a, $b = null)
+    {
+        if ($a === $b) {
+            bar();
+        } elseif ($a > $b) {
+            $foo->bar($arg1);
+        } else {
+            BazClass::bar($arg2, $arg3);
+        }
+    }
 
-	    final public static function bar()
-	    {
-	        // method body
-	    }
+    final public static function bar()
+    {
+        // method body
+    }
 ```
 	 
  2. 
