@@ -1,6 +1,6 @@
 # PHP Style Guide
 
-Este é o guia de desenvolvimento para classes de **PHP** do **SBS**.
+Este é o guia de desenvolvimento para classes de **PHP** do **SBS**. Em caso de dúvidas ou regra que não conste neste documento deve-se encontrar na [PSR-2](https://www.php-fig.org/psr/psr-2/), referência para este documento.
 
  1. **Visão Geral**
 	 - **NÃO** deve existir um limite máximo do tamanho da linha, contudo é **RECOMENDÁVEL** utilizar no 			entre 80 a 120 caracteres.
@@ -187,10 +187,85 @@ class Foo extends Bar implements FooInterface
 	}
 	```	
 	
+ 5.  **Show Case**
+		
+-	**Classes**
+		
+```php
+// Bad
+<?php
+
+namespace Vender\Package;
+use foo\bar as Bar;
+use foo\baz;
+use FooInterface;
+
+class FooBar extends Bar implements FooInterface{
+	...
+}
+
+// Good
+<?php
+namespace Vender\Package;
+
+use foo\bar as Bar;
+use foo\baz;
+use FooInterface;
+
+/** [Descrição do arquivo]
+* 
+* [mais informações precisa ter 1 ENTER para definir novo parágrafo]
+* 
+* [pode usar quantas linhas forem necessárias]
+* [linhas logo abaixo como esta, são consideradas mesmo parágrafo]
+* 
+* @package [Nome do pacote de Classes, ou do sistema] 
+* @category [Categoria a que o arquivo pertence] 
+* @name [Apelido para o arquivo] OBRIGATÓRIO
+* @author [nome do autor] <[e-mail do autor]> OBRIGATÓRIO
+* @copyright [Informações de Direitos de Cópia] OBRIGATÓRIO
+* @license [link da licença] [Nome da licença] 
+* @link [link de onde pode ser encontrado esse arquivo] 
+* @version [Versão atual do arquivo] OBRIGATÓRIO
+* @since [Arquivo existe desde: Data ou Versao] 
+*/
+class FooBar extends Bar implements FooInterface{
+	...
+}
+```
+- Classes
+```php
+class Uploads 	
+
+
+```
+
+
+- Variáveis
+```php
+	// Somentes as varíaveis que são atributos em bando de dados 
+	// devem ter syntaxe lowerse com underline
 	
+	// Bad
+	$foo_bar; // Somente para atributos de banco de dados
+	$arrybarfoobaz;
+	$_foo_bar;
+	
+	// Good
+	$fooBar;
+	$foo;
+```
+- Métodos
+```php
 	
 
- 4.  **Modelos**
- 5. **Controladores**
- 6. 
+
+```
+
+
+
+	  
+ 6. **Modelos**
+ 7. **Controladores**
+ 8. **Views**
 
