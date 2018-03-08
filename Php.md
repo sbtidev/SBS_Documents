@@ -50,24 +50,48 @@ class Foo extends Bar implements FooInterface
 	 - **Namespace e Use**
 		 - Para cada declaração deve haver um `use`
  3. **Classes, Propriedades e Métodos**
-	 - Os termo `extends` e `implements` **DEVEM** ser declarados na mesma linha do nome da classe, contudo no caso de muitos `implements` podem ser cada declaração por linha.
+	 - Os termo `extends` e `implements` **DEVEM** ser declarados na mesma linha do nome da classe, contudo no caso de muitos `implements` pode-se inserir uma declaraçao por linha.
 	 - A chave de inicio da classe **DEVE**  possui linha própria e seu fechamento **DEVE** estar na última linha do arquivo.
-```php
-<?php
-namespace Vendor\Package;
 
-use FooClass;
-use BarClass as Bar;
-use OtherVendor\OtherPackage\BazClass;
+    ```php
+    <?php
+    namespace Vendor\Package;
+    
+    use FooClass;
+    use BarClass as Bar;
+    use OtherVendor\OtherPackage\BazClass;
+    
+    class ClassName extends ParentClass implements
+        \ArrayAccess,
+        \Countable,
+        \Serializable
+    {
+        // constants, properties, methods
+    }
+    ```
+	- Propriedades
+		- Não pode exisitir mais de uma declaração de propriedade por linha.
+		- As propriedades **NÃO DEVEM** inicio com underline para indicar `protected` ou `private` visibilidade.
+	- Métodos
+		- Em todos os métodos a visibilidade **DEVE** ser informada.
+		- Os métodos **NÃO DEVEM** possui underline para indicar `protected` ou `private` .
+		- Os nomes dos métodos **NÃO DEVEM** possuir espaços em branco no final.
+		- A chave de abertura **DEVE** ter sua própria linha. E sua chave de fechamento **DEVE** ter está na ultima linha da função.
+		
+	```php
+	<?php
+	namespace Vendor\Package;
 
-class ClassName extends ParentClass implements
-    \ArrayAccess,
-    \Countable,
-    \Serializable
-{
-    // constants, properties, methods
-}
-```
+	class ClassName
+	{
+	    public function fooBarBaz($arg1, &$arg2, $arg3 = [])
+	    {
+	        // method body
+	    }
+	}
+	```
+		
+
  4.  **Modelos**
  5. **Controladores**
  6. 
