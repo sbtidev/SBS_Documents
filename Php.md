@@ -74,10 +74,10 @@ class Foo extends Bar implements FooInterface
 		- As propriedades **NÃO DEVEM** inicio com underline para indicar `protected` ou `private` visibilidade.
 	- Métodos
 		- Em todos os métodos a visibilidade **DEVE** ser informada.
-		- Os métodos **NÃO DEVEM** possui underline para indicar `protected` ou `private` .
+		- Os métodos **NÃO DEVEM** possui *underline* para indicar `protected` ou `private` .
 		- Os nomes dos métodos **NÃO DEVEM** possuir espaços em branco no final.
-		- A chave de abertura **DEVE** ter sua própria linha. E sua chave de fechamento **DEVE** ter está na ultima linha da função.
-		
+		- A chave de abertura **DEVE** ter linha própria. E sua chave de fechamento **DEVE** ter está na ultima linha da função.
+		- O espaçamento so **DEVE** existir depois da virgula.
 	```php
 	<?php
 	namespace Vendor\Package;
@@ -90,7 +90,105 @@ class Foo extends Bar implements FooInterface
 	    }
 	}
 	```
-		
+	-	Abstract , final e static
+		-	Quando presente, `abstract` e `final`  **DEVEM** estar antes da visibilidades, somente `static` **DEVE** ficar após.
+		Devem ser parecidos com estes exemplos.
+    ```php
+	<?php
+	bar();
+	$foo->bar($arg1);
+	Foo::bar($arg2, $arg3);
+	```
+
+    ```php
+	<?php
+	$foo->bar(
+	    $longArgument,
+	    $longerArgument,
+	    $muchLongerArgument
+	);
+	```
+- Estruturas de Controle
+	- Em geral devem seguir as regras abaixo:
+		- **DEVE** existir um espaço após a `palavra chave`
+		- **NÃO DEVE** haver um espaço após o parentese de abertura e fechamento.
+		- **DEVE** existir um espaço entre o parentese de fechamento e a chave de abertura.
+		- A chave de fechamento **DEVE** ter linha própria.
+
+	As estruturas de controle devem ser parecidas com os exemplos abaixo.
+
+	
+
+    ```php
+	<?php
+	if ($expr1) {
+	    // if body
+	} elseif ($expr2) {
+	    // elseif body
+	} else {
+	    // else body;
+	}
+	```
+	
+	```php
+	<?php
+	switch ($expr) {
+	    case 0:
+	        echo 'First case, with a break';
+	        break;
+	    case 1:
+	        echo 'Second case, which falls through';
+	        // no break
+	    case 2:
+	    case 3:
+	    case 4:
+	        echo 'Third case, return instead of break';
+	        return;
+	    default:
+	        echo 'Default case';
+	        break;
+	}
+	```
+
+	```php
+	<?php
+	while ($expr) {
+	    // structure body
+	}
+	```
+	
+	```php
+	<?php
+	do {
+	    // structure body;
+	} while ($expr);
+	```
+	```php
+	<?php
+	for ($i = 0; $i < 10; $i++) {
+	   // for body
+	}
+	```
+	```php
+	<?php
+	foreach ($iterable as $key => $value) {
+	  // foreach body
+	}
+	```
+	
+	```php
+	<?php
+	try {
+	   // try body
+	} catch (FirstExceptionType $e) {
+	   // catch body
+	} catch (OtherExceptionType $e) {
+	   // catch body
+	}
+	```	
+	
+	
+	
 
  4.  **Modelos**
  5. **Controladores**
