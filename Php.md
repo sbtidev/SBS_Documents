@@ -52,6 +52,7 @@ class Foo extends Bar implements FooInterface
  3. **Classes, Propriedades e Métodos**
 	 - Os termo `extends` e `implements` **DEVEM** ser declarados na mesma linha do nome da classe, contudo no caso de muitos `implements` pode-se inserir uma declaraçao por linha.
 	 - A chave de inicio da classe **DEVE**  possui linha própria e seu fechamento **DEVE** estar na última linha do arquivo.
+	 - O nome da classe **DEVE** estar no singular.
 
     ```php
     <?php
@@ -76,8 +77,9 @@ class Foo extends Bar implements FooInterface
 		- Em todos os métodos a visibilidade **DEVE** ser informada.
 		- Os métodos **NÃO DEVEM** possui *underline* para indicar `protected` ou `private` .
 		- Os nomes dos métodos **NÃO DEVEM** possuir espaços em branco no final.
-		- A chave de abertura **DEVE** ter linha própria. E sua chave de fechamento **DEVE** ter está na ultima linha da função.
+		- A chave de abertura **DEVE** ter linha própria, somente quando os argumentos estão na mesma linda. E sua chave de fechamento **DEVE** ter está na ultima linha da função.
 		- O espaçamento so **DEVE** existir depois da virgula.
+		- Todos os métodos **DEVEM** ter sua documentação na linha acima da declaração, seguibndo o padrão abaixo.
 	```php
 	<?php
 	namespace Vendor\Package;
@@ -90,6 +92,24 @@ class Foo extends Bar implements FooInterface
 	    }
 	}
 	```
+	```php
+
+	<?php
+	namespace Vendor\Package;
+
+	class ClassName
+	{
+	    public function aVeryLongMethodName(
+	        ClassTypeHint $arg1,
+	        &$arg2,
+	        array $arg3 = []
+	    ) {
+	        // method body
+	    }
+	}
+
+	```
+
 	-	Abstract , final e static
 		-	Quando presente, `abstract` e `final`  **DEVEM** estar antes da visibilidades, somente `static` **DEVE** ficar após.
 		Devem ser parecidos com estes exemplos.
@@ -235,32 +255,55 @@ class FooBar extends Bar implements FooInterface{
 ```
 - Classes
 ```php
-class Uploads 	
+// Good
+class Upload
+class User
+class UploadFile
 
-
+//Bad
+class upload
+class Uploads
+class Upload_File
 ```
-
 
 - Variáveis
 ```php
-	// Somentes as varíaveis que são atributos em bando de dados 
-	// devem ter syntaxe lowerse com underline
-	
-	// Bad
-	$foo_bar; // Somente para atributos de banco de dados
-	$arrybarfoobaz;
-	$_foo_bar;
-	
-	// Good
-	$fooBar;
-	$foo;
+// Somentes as varíaveis que são atributos em bando de dados 
+// devem ter syntaxe lowerse com underline
+
+// Bad
+$foo_bar; // Somente para atributos de banco de dados
+$arrybarfoobaz;
+$_foo_bar;
+
+// Good
+$fooBar;
+$foo;
 ```
 - Métodos
 ```php
-	
+//Bad
+public function foo_bar_baz(){
+	...
+}
 
+//Good
+public function fooBar($arg, $arg2, $agr3){
+	...
+}
 
+public function fooBarBazBar(
+	$arg,
+	$arg2,
+	$agr3)
+	{
+	...
+}
 ```
+
+
+
+
 
 
 
